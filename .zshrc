@@ -26,6 +26,7 @@ _comp_options+=(globdots)
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias config='/usr/bin/git --git-dir=/home/cjdsellers/.cfg/ --work-tree=/home/cjdsellers'
 
 ### Commands ###
 
@@ -45,4 +46,3 @@ export NVM_DIR="$HOME/.nvm"
 export LD_LIBRARY_PATH="natilus_trader/core/rust/libs"
 
 export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
-alias config='/usr/bin/git --git-dir=/home/cjdsellers/.cfg/ --work-tree=/home/cjdsellers'

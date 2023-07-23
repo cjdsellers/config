@@ -1,0 +1,9 @@
+[user]
+	name = Chris Sellers
+	email = chris@cjdsellers.io
+
+[credential]
+	helper = store
+
+[init]
+	defaultBranch = master
