@@ -1,7 +1,7 @@
 # Setup path
 fpath+=($HOME/.zsh/pure)
 
-# export TERM=xterm-256color
+export TERM=tmux-256color
 export EDITOR=nvim
 
 # History in cache directory
@@ -26,7 +26,7 @@ _comp_options+=(globdots)
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias config='/usr/bin/git --git-dir=/home/cjdsellers/.cfg/ --work-tree=/home/cjdsellers'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 ### Commands ###
 
@@ -45,4 +45,4 @@ export NVM_DIR="$HOME/.nvm"
 # Nautilus
 export LD_LIBRARY_PATH="natilus_trader/core/rust/libs"
 
-export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
+export PATH="$PATH:$HOME/.local/share/bob/nvim-bin:$HOME/arcanist/bin"
