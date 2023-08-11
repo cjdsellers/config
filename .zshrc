@@ -45,4 +45,4 @@ export NVM_DIR="$HOME/.nvm"
 # Nautilus
 export LD_LIBRARY_PATH="natilus_trader/core/rust/libs"
 
-export PATH="$PATH:$HOME/.local/share/bob/nvim-bin:$HOME/arcanist/bin"
+export PATH="$PATH:$HOME.local/bin/poetry:$HOME/.local/share/bob/nvim-bin:$HOME/arcanist/bin"
