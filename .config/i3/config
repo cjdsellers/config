@@ -18,6 +18,9 @@ font pango:DejaVu Sans Mono 10
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+# Set background wallpaper
+exec --no-startup-id feh --bg-scale ~/wallpaper.jpg
+
 # Set the screen saver to activate after 60 minutes of inactivity
 exec --no-startup-id xset s 3600
 
