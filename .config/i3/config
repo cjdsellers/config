@@ -120,6 +120,9 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# Bind nautilus file manager
+bindsym $mod+Shift+f exec nautilus
+
 # Bind Flameshot to take screenshots with $mod+Shift+s
 bindsym $mod+Shift+s exec flameshot gui
 
