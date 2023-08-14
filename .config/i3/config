@@ -4,11 +4,11 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+set $mod Mod4
+
 for_window [class="^.*"] border pixel 1
 gaps inner 10
 gaps outer 5
-
-set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -22,11 +22,14 @@ font pango:DejaVu Sans Mono 10
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+exec --no-startup-id picom -b
+
 # Set background wallpaper
 exec --no-startup-id feh --bg-scale ~/wallpaper.jpg
 
 # Set the screen saver to activate after 60 minutes of inactivity
 exec --no-startup-id xset s 3600
+exec --no-startup-id xset s off -dpms
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -49,18 +52,11 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-bindsym $mod+Shift+v exec --no-startup-id nmcli con up id "databento_vpn"
-bindsym $mod+Shift+d exec --no-startup-id nmcli con down id "databento_vpn"
-
 # start a terminal
 bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
-
-# scale gaps
-bindsym $mod+z		gaps outer current plus 5
-bindsym $mod+Shift+z	gaps outer current minus 5
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
@@ -95,10 +91,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+apostrophe split horizontal
+bindsym $mod+| split horizontal
 
 # split in vertical orientation
-bindsym $mod+v split vertical
+bindsym $mod+- split vertical
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
