@@ -4,6 +4,10 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+for_window [class="^.*"] border pixel 1
+gaps inner 10
+gaps outer 5
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -53,6 +57,10 @@ bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
+
+# scale gaps
+bindsym $mod+z		gaps outer current plus 5
+bindsym $mod+Shift+z	gaps outer current minus 5
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
@@ -190,4 +198,6 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        position bottom
+        height 20
 }
