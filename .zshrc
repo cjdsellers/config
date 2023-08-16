@@ -5,8 +5,8 @@ export TERM=tmux-256color
 export EDITOR=nvim
 
 # History in cache directory
-HISTSIZE=20000
-SAVEHIST=20000
+HISTSIZE=10000000
+SAVEHIST=10000000
 HISTFILE=~/.cache/zshhistory
 setopt appendhistory
 
