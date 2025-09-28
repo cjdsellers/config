@@ -27,14 +27,15 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias venv="source .venv/bin/activate"
+alias update-ai-tools='claude update && npm install -g @openai/codex && codex --version'
+
+# Python
+alias python='python3'
+
+export PYTHON_CONFIGURE_OPTS="--enable-shared"
 
 ### Commands ###
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PYTHON_CONFIGURE_OPTS="--enable-shared"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -45,4 +46,4 @@ export NVM_DIR="$HOME/.nvm"
 # Nautilus
 export LD_LIBRARY_PATH="natilus_trader/core/rust/libs"
 
-export PATH="$PATH:$HOME.local/bin/poetry:$HOME/.local/share/bob/nvim-bin:$HOME/arcanist/bin"
+export PATH="$HOME/.cargo/bin:$PATH:$HOME/.local/share/bob/nvim-bin"
