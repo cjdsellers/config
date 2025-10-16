@@ -32,6 +32,21 @@ alias update-ai-tools='claude update && npm install -g @openai/codex && codex --
 
 # Python
 alias python='python3'
+alias pyenv-setup='
+  if [[ -f .venv/bin/python3 ]]; then
+    PYVER=$(.venv/bin/python3 --version | awk "{print \$2}" | cut -d. -f1,2)
+    PYPATH=$(find ~/.local/share/uv/python -maxdepth 1 -type d -name "cpython-${PYVER}.*-linux-x86_64-gnu" 2>/dev/null | head -n1)
+    if [[ -n "$PYPATH" ]]; then
+      export LD_LIBRARY_PATH="${PYPATH}/lib"
+      export PYO3_PYTHON=$(pwd)/.venv/bin/python3
+      echo "✓ Set up Python ${PYVER} environment"
+    else
+      echo "✗ Could not find uv Python installation for version ${PYVER}"
+    fi
+  else
+    echo "✗ No .venv/bin/python3 found in current directory"
+  fi
+'
 
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
 
@@ -47,3 +62,6 @@ export NVM_DIR="$HOME/.nvm"
 export LD_LIBRARY_PATH="natilus_trader/core/rust/libs"
 
 export PATH="$HOME/.cargo/bin:$PATH:$HOME/.local/share/bob/nvim-bin"
+
+
+alias claude="/home/chris/.claude/local/claude"
